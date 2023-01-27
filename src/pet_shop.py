@@ -59,3 +59,7 @@ def remove_customer_cash(customer, cash_to_be_removed):
 # Test 16 - Customer Pet Count
 def get_customer_pet_count(customer):
     return len(customer["pets"])
+
+# Test 17 - Add Pet to Customer
+def add_pet_to_customer(customer, new_pet):
+    customer["pets"].append(new_pet)
