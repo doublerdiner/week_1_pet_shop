@@ -66,7 +66,22 @@ def add_pet_to_customer(customer, new_pet):
 
 # OPTIONAL TESTS
 
-# Test 18 - Customer Can Afford Pet
+# Test 18, 19 & 20 - Customer Can Afford Pet
 def customer_can_afford_pet(customer, new_pet):
     if customer["cash"] >= new_pet["price"]:
         return True
+    else:
+        return False
+
+# Test 21 - Sell Pet to Customer
+def sell_pet_to_customer(pet_shop_details, pet, customer):
+    if pet == None:
+        return None
+    elif customer_can_afford_pet(customer, pet) == False:
+        return None
+    else:
+        remove_pet_by_name(pet_shop_details, pet["name"])
+        increase_pets_sold(pet_shop_details, 1)
+        remove_customer_cash(customer, pet["price"])
+        add_pet_to_customer(customer, pet)
+        add_or_remove_cash(pet_shop_details, pet["price"])
