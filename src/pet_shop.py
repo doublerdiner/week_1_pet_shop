@@ -23,3 +23,11 @@ def increase_pets_sold(pet_shop_details, pets_sold):
 # Test 7 - Stock Count
 def get_stock_count(pet_shop_details):
     return len(pet_shop_details["pets"])
+
+# Test 8 - Pets by Breed
+def get_pets_by_breed(pet_shop_details, breed_name):
+    pets_by_breed = []
+    for pet in pet_shop_details["pets"]:
+        if pet["breed"] == breed_name:
+            pets_by_breed.append(pet)
+    return pets_by_breed
